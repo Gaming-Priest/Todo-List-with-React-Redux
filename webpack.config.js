@@ -63,14 +63,14 @@ const config = {
     contentBase: './dist',
     writeToDisk: true
   },
-  devtool: 'source-map',
+  devtool: 'inline-source-map',
   plugins: [
       new CleanWebpackPlugin({
       dry: false,
       verbose: true,
       cleanStaleWebpackAssets: false,
       cleanOnceBeforeBuildPatterns: ['**/*','!urls/**', '!index.html'],
-      cleanAfterEveryBuildPatterns: ['**/*','urls/**', '!index.html']
+      cleanAfterEveryBuildPatterns: ['**/*','!urls/**', '!index.html']
     }),
       new HtmlWebpackPlugin({
       template: 'src/template.html',

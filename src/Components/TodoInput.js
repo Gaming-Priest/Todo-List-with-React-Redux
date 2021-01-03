@@ -31,29 +31,29 @@ function TodoInput(props) {
       })
     }
   }
- function clear(){
-   props.actions.cleartodo()
- }
- 
+
   return (
     <div className='card card-body my-3'>
      <form>
         <div className='input-group'>
           <div className='input-group-prepend'>
             <div className='input-group-text  text-white bg-primary'>
-            <i className='fas fa-book'></i>
+            <i className='fas fa-book'/>
             </div>
           </div>
             <input className='form-control text-capitalize' onChange={handleChange} value={state.input} placeholder='create todo item'/>
         </div>
         <button type='submit' onClick={submit} className='btn form-control btn-primary my-3'>add item</button>
       </form>
-        <button onClick={clear}  className='btn btn-block bg-danger my-3'>clear list</button>
   </div>
   )
+}
+
+function mapStateToProps(state) {
+  return  {}
 }
 
 function mapDispatchToProps(dispatch) {
   return { actions: bindActionCreators(creators, dispatch) };
 }
-export default connect(null, mapDispatchToProps)(TodoInput);
+export default connect(mapStateToProps, mapDispatchToProps)(TodoInput);

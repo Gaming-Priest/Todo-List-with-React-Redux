@@ -4,8 +4,12 @@ export function addtodo(todo) {
   return { type: actions.ADD_TODO, newTodo: todo }
 }
 
-export function edittodo() {
-  return { type: actions.EDIT_TODO }
+export function edittodo(id) {
+  return { type: actions.EDIT_TODO, id: id }
+}
+
+export function deletetodo(id) {
+  return { type: actions.DELETE_TODO, id: id}
 }
 
 export function cleartodo() {

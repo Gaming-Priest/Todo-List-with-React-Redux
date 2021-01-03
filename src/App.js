@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { hot } from 'react-hot-loader'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,21 +10,34 @@ import {
 
 import TodoList from './Components/TodoList';
 import TodoInput from './Components/TodoInput';
+import * as creators from './Components/Redux/actions/creators'
 
+function App(props) {
+  const { input, setInput } = useState('')
 
-function App() {
+  function editTodo(e) {
+    let id = e.target.id;
+    let title = e.target.title;
+    props.actions.edittodo(id);
+    setInput(title);
+  }
+
 
   return (
     <div className='container'>
       <div className='row'>
         <div className='col-10 mx-auto col-md-8 mt-4'>
           <h3 className='text-capitalize text-center'> todo input</h3>
-            <TodoInput />
-            <TodoList />
+            <TodoInput input={input} />
+            <TodoList editTodo={editTodo} />
         </div>
       </div>
     </div>
   );
 }
 
-export default App
+function mapDispatchToProps(dispatch) {
+  return {actions: bindActionCreators(creators,dispatch)}
+}
+
+export default connect(null, mapDispatchToProps)(App)

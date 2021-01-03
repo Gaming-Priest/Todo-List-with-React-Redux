@@ -8,7 +8,6 @@ import "./styles.less";
 import 'bootstrap/dist/css/bootstrap.css';
 import '../fontawesome@5.15.1/css/all.css'
 const store = ReduxStore
-
 var mountNode = document.getElementById("app");
 
 ReactDOM.render(
