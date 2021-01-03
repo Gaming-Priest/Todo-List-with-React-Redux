@@ -22,8 +22,7 @@ function App(props) {
    let id = e.target.id;
     let title = e.target.title;
    props.actions.edittodo(id);
-    console.log(title);
-   
+    
     setText({
       edit:title,
       isEdit:true
