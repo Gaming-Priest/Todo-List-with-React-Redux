@@ -13,13 +13,21 @@ import TodoInput from './Components/TodoInput';
 import * as creators from './Components/Redux/actions/creators'
 
 function App(props) {
-  const { input, setInput } = useState('')
+  const [ text, setText ] = useState({
+    edit:'',
+    isEdit:false
+  })
 
   function editTodo(e) {
-    let id = e.target.id;
+   let id = e.target.id;
     let title = e.target.title;
-    props.actions.edittodo(id);
-    setInput(title);
+   props.actions.edittodo(id);
+    console.log(title);
+   
+    setText({
+      edit:title,
+      isEdit:true
+    });
   }
 
 
@@ -28,7 +36,7 @@ function App(props) {
       <div className='row'>
         <div className='col-10 mx-auto col-md-8 mt-4'>
           <h3 className='text-capitalize text-center'> todo input</h3>
-            <TodoInput input={input} />
+            <TodoInput text={text} settext={setText}/>
             <TodoList editTodo={editTodo} />
         </div>
       </div>

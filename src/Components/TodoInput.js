@@ -32,6 +32,19 @@ function TodoInput(props) {
     }
   }
 
+  // if (!props.text.isEdit) {
+  //   return;
+  // }else{
+  //   setState({
+  //     input:props.text.edit,
+  //     id:uuid()
+  //   })
+  //   props.settext({
+  //     edit:'',
+  //     isEdit:false
+  //   })
+  // }
+
   return (
     <div className='card card-body my-3'>
      <form>
@@ -50,7 +63,7 @@ function TodoInput(props) {
 }
 
 function mapStateToProps(state) {
-  return  {}
+  return  {id:state}
 }
 
 function mapDispatchToProps(dispatch) {

@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux'
 import * as creators from './Redux/actions/creators'
 
 function TodoList(props) {
-  console.log(props);
+  
 
   function clear() {
     props.dispatch(creators.cleartodo())
@@ -34,7 +34,7 @@ function TodoList(props) {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
+  
   
   return {newItem:state}
 }
