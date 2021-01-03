@@ -63,7 +63,7 @@ const config = {
     contentBase: './dist',
     writeToDisk: true
   },
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
   plugins: [
       new CleanWebpackPlugin({
       dry: false,
