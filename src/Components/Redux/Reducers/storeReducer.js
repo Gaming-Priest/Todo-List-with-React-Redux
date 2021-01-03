@@ -11,8 +11,8 @@ export const storeReducer = (state, action) => {
       return filtered;
       break;
     case actions.EDIT_TODO:
-      let filtered = state.filter(s => s.id !== action.id);
-      return filtered;
+      let selected = state.filter(s => s.id !== action.id);
+      return selected;
       break;
     case actions.CLEAR_TODO:
       return [];
