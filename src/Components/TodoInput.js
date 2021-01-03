@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { connect } from 'react-redux'
 import * as creators from './Redux/actions/creators'
 import { bindActionCreators } from 'redux'
@@ -31,19 +31,21 @@ function TodoInput(props) {
       })
     }
   }
+useEffect(()=>{
+    if (!props.text.isEdit) {
+      return;
+    }else{
+      setState({
+        input:props.text.edit,
+        id:uuid()
+      })
+      props.settext({
+        edit:'',
+        isEdit:false
+      })
+    }
+})
 
-  // if (!props.text.isEdit) {
-  //   return;
-  // }else{
-  //   setState({
-  //     input:props.text.edit,
-  //     id:uuid()
-  //   })
-  //   props.settext({
-  //     edit:'',
-  //     isEdit:false
-  //   })
-  // }
 
   return (
     <div className='card card-body my-3'>
