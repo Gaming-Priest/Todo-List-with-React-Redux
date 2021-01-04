@@ -50,7 +50,7 @@ const TodoInput = props => {
         <div className='input-group'>
           <div className='input-group-prepend'>
             <div className='input-group-text  text-white bg-primary'>
-            <i className='fas fa-book'/>
+            <h6><i className='fas fa-book'/></h6>
             </div>
           </div>
             <input className='form-control text-capitalize' onChange={handleChange} value={state.input} placeholder='create todo item'/>

@@ -13,6 +13,7 @@ export const storeReducer = (state = initialStore, action) => {
 
          case actions.DELETE_TODO:
             let filtered = state.todos.filter(s => s.id !== action.payload);
+            
             return { ...state, todos: filtered }
 
             case actions.EDIT_TODO:
