@@ -1,12 +1,7 @@
 import * as actions from '../actions/const.js';
 
-const initialStore = {
-   todos: [],
-   edit: {},
-   isEdit: false
-}
 
-export const storeReducer = (state = initialStore, action) => {
+export const storeReducer = (state , action) => {
    switch (action.type) {
       case actions.ADD_TODO:
          return { ...state, todos: [...state.todos, action.payload], isEdit: false }
